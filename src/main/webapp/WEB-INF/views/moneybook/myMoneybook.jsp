@@ -10,12 +10,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="<c:url value="/css/bootstrap.min.css" />">
 <link
-	href="//netdna.bootstrapcdn.com/twitter-bootstrap/3.3.7/css/bootstrap-combined.min.css"
+	href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css"
 	rel="stylesheet" id="bootstrap-css">
 <script
-	src="//netdna.bootstrapcdn.com/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<!-- <script type="text/javascript" src="/resources/js/jquery-3.4.1.js"></script> -->
+<script type="text/javascript" src="/resources/js/jquery-3.4.1.js"></script>
 <script type="text/javascript">
 	function moneybookWriteForm() {
 		location.href = "/moneybook/moneybookWriteForm";
@@ -178,7 +178,7 @@
 
 
 	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-	<!-- <script src="js/bootstrap.js"></script> -->
+	<script src="js/bootstrap.js"></script>
 	
 
 </body>
