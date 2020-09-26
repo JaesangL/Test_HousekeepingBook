@@ -37,31 +37,31 @@
 		<div class="col-lg-4"></div>
 		<div class="col-lg-4">
 			<div class="jumbotron" style="padding-top: 20px;">
-			<h2>[가계부 입력]</h2>
+			<h2>[家計簿作成]</h2>
 	<form id="writeform" action="/moneybook/write" method="post">
 	<input type="hidden" value="${sessionScope.loginID }" name="acc_id">
 	
 	<div class="form-group">
 						<input type="text" name="moneybook_memo" id="moneybook_memo" 
-							placeholder="메모" class="form-control">
+							placeholder="メモ" class="form-control">
 					</div>
 		
 		
 		
 					<select name="moneybook_type" class="selectpicker" style="height:30px">
-						<option value="수입">수입</option>
-						<option value="지출">지출</option>
+						<option value="수입">収入</option>
+						<option value="지출">支出</option>
 					</select>
 					<br>
 					<br>
 			
 			<div class="form-group">
 					<input type="number" name="moneybook_amount" id="moneybook_amount"
-							placeholder="금액" class="form-control">
+							placeholder="金額" class="form-control">
 					</div>	
 			
 		
-		<input type="button" value="입력하기" class="btn btn-primary form-control" onclick="writeform();">
+		<input type="button" value="登録する" class="btn btn-primary form-control" onclick="writeform();">
 	</form>
 			</div>
 		</div>

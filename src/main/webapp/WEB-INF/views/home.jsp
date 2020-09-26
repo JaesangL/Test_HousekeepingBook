@@ -18,7 +18,7 @@
 				<span class="icon-bar"></span> <span class="icon-bar"></span> <span
 					class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="#">board web site</a>
+			<a class="navbar-brand" href="/">家計簿</a>
 		</div>
 		<div class="collapse navbar-collapse"
 			id="bs-example-navbar-collapse-1">
@@ -35,8 +35,8 @@
 						data-toggle="dropdown" role="button" aria-haspopup="true"
 						aria-expanded="false"> 接続<span class="caret"></span></a>
 						<ul class="dropdown-menu">
-							<li><a href="/account/accountJoin">회원가입</a></li>
-						<li><a href="/account/accountLogin">로그인</a></li>
+							<li><a href="/account/accountJoin">ユーザー登録</a></li>
+						<li><a href="/account/accountLogin">Login</a></li>
 						</ul></li>
 				</c:if>
 			</ul>
@@ -48,10 +48,10 @@
 				<c:if test="${sessionScope.loginID != null}">
 					<li class="dropdown"><a href="#" class="dropdown-toggle"
 						data-toggle="dropdown" role="button" aria-haspopup="true"
-						aria-expanded="false"> hello<span class="caret"></span></a>
+						aria-expanded="false">Content<span class="caret"></span></a>
 						<ul class="dropdown-menu">
-							<li><a href="/moneybook/myMoneybook">내 가계부</a></li>
-						<li><a href="/account/accountLogout">로그아웃</a></li>
+							<li><a href="/moneybook/myMoneybook">私の家計簿</a></li>
+						<li><a href="/account/accountLogout">Logout</a></li>
 
 						</ul></li>
 				</c:if>
@@ -62,7 +62,7 @@
 	<div class="container" >
 		<div class="jumbotron">
 			<div class="container">
-				<h1>家 計 簿</h1>
+				<h3>${sessionScope.loginID}の家計簿</h3>
 				<p ><br>
 					
 				</p>

@@ -61,14 +61,14 @@
 				<span class="icon-bar"></span> <span class="icon-bar"></span> <span
 					class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="#">board web site</a>
+			<a class="navbar-brand" href="/">家計簿</a>
 		</div>
 		<div class="collapse navbar-collapse"
 			id="bs-example-navbar-collapse-1">
-			<ul class="nav navbar-nav">
+			<!-- <ul class="nav navbar-nav">
 				<li class="active"><a href="#">main</a></li>
 				<li><a href="board/list">board</a></li>
-			</ul>
+			</ul> -->
 		</div>
 	</nav>
 	<div class="container">
@@ -77,7 +77,7 @@
 			<div class="jumbotron" style="padding-top: 20px;">
 				<form id="joinForm" action="/account/join" method="post">
 
-					<h3 style="text-align: center;">会員加入</h3>
+					<h3 style="text-align: center;">ユーザー登録</h3>
 					<div class="form-group">
 						<input type="text" name="acc_id" id="acc_id" maxlength="10"
 							placeholder="ID" class="form-control" value="${member.id}">

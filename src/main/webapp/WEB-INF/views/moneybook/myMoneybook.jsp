@@ -6,13 +6,16 @@
 <head>
 <meta charset="UTF-8">
 <title>M Y M O N E Y B O O K</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="<c:url value="/css/bootstrap.min.css" />">
 <link
-	href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css"
+	href="//netdna.bootstrapcdn.com/twitter-bootstrap/3.3.7/css/bootstrap-combined.min.css"
 	rel="stylesheet" id="bootstrap-css">
 <script
-	src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+	src="//netdna.bootstrapcdn.com/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<script type="text/javascript" src="/resources/js/jquery-3.4.1.js"></script>
+<!-- <script type="text/javascript" src="/resources/js/jquery-3.4.1.js"></script> -->
 <script type="text/javascript">
 	function moneybookWriteForm() {
 		location.href = "/moneybook/moneybookWriteForm";
@@ -100,26 +103,42 @@
 </script>
 </head>
 <body>
+<nav class="navbar navbar-default">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed"
+				data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+				aria-expanded="false">
+				<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+					class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="/">家計簿</a>
+		</div>
+		<div class="collapse navbar-collapse"
+			id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav">
+				<li><a href="/">main</a></li>
+
+			</ul>
+			
+		</div>
+	</nav>
+
 	<div class="btn-toolbar">
-		<button class="btn btn-primary" onclick="moneybookWriteForm();">가계부
-			작성</button>
-		<button class="btn btn-primary" onclick="allIncome();">총 수입
-			구하기</button>
-		<button class="btn btn-primary" onclick="allPay();">총 지출 구하기</button>
-		<button class="btn btn-primary" onclick="minMoney();">최소 금액
-			구하기</button>
-		<button class="btn btn-primary" onclick="maxMoney();">최대 금액
-			구하기</button>
+		<button class="btn btn-primary" onclick="moneybookWriteForm();">家計簿作成</button>
+		<button class="btn btn-primary" onclick="allIncome();">総収入</button>
+		<button class="btn btn-primary" onclick="allPay();">総支出</button>
+		<button class="btn btn-primary" onclick="minMoney();">最小金額</button>
+		<button class="btn btn-primary" onclick="maxMoney();">最高金額</button>
 	</div>
 	<div class="well">
 		<table class="table">
 			<thead>
 				<tr>
-					<th>번호</th>
-					<th>메모</th>
-					<th>종류</th>
-					<th>금액</th>
-					<th>작성일</th>
+					<th>No.</th>
+					<th>メモ</th>
+					<th>タイプ</th>
+					<th>金額</th>
+					<th>作成日</th>
 					<th></th>
 					<th></th>
 					<th style="width: 36px;"></th>
@@ -148,15 +167,19 @@
 
 	<br>
 	<form class="form-inline" role="form">
-		<input type="text" class="form-control" id="resultMoney1"
-			placeholder="총 수입 또는 지출"> <br> <br> <input
+		<span>総収入 or 総支出 : </span><input type="text" class="form-control" id="resultMoney1"
+			placeholder="総収入 or 総支出"> <br> <br> 
+		<span>最小 or 最高金額 : </span><input
 			type="text" class="form-control" id="resultMoney2"
-			placeholder="최소 또는 최대 금액">
+			placeholder="最小 or 最高金額">
 
 	</form>
 
 
 
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+	<!-- <script src="js/bootstrap.js"></script> -->
+	
 
 </body>
 </html>
