@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.test.housebook.dao.MoneybookMapper">
+	<insert id="moneybookInsert" parameterType="moneybook">
+		insert into
+			moneybook_tb(
+				moneybook_no
+				,acc_id
+				,moneybook_memo		
+				,moneybook_type
+				,moneybook_amount
+			)values(
+				moneybook_tb_seq.nextval
+				,#{acc_id}
+				,#{moneybook_memo}
+				,#{moneybook_type}
+				,#{moneybook_amount}
+			)
+	</insert>
+	
+	<select id="moneybookAll" resultType="moneybook" parameterType="hashmap">
+		select
+			moneybook_no
+			,acc_id
+			,moneybook_memo		
+			,moneybook_type
+			,moneybook_amount
+			,to_char(moneybook_indate, 'YYYY-MM-DD') as moneybook_indate
+		from
+			moneybook_tb
+		where
+			acc_id = #{acc_id}
+			and
+			<if test="moneybook_type != ''">
+				<if test="moneybooK_type == '수입'">
+					moneybook_type = '수입'
+						and
+				</if>
+				<if test="moneybook_type == '지출'">
+					moneybook_type = '지출'
+						and
+				</if>
+			</if>
+					moneybook_memo like '%' || #{moneybook_memo} || '%'
+		order by
+			moneybook_indate desc
+	</select>
+	
+	<select id="moneybookOne" resultType="moneybook" parameterType="int">
+		select
+			moneybook_no
+			,acc_id
+			,moneybook_memo		
+			,moneybook_type
+			,moneybook_amount
+			,to_char(moneybook_indate, 'YYYY-MM-DD') as moneybook_indate
+		from
+			moneybook_tb
+		where
+			moneybook_no = #{moneybook_no}
+	</select>
+	
+	<update id="moneybookUpdate" parameterType="moneybook">
+		update
+			moneybook_tb
+		set
+			moneybook_memo = #{moneybook_memo}
+			,moneybook_type = #{moneybook_type}
+			,moneybook_amount = #{moneybook_amount}
+		where
+			moneybook_no = #{moneybook_no}
+	</update>
+	
+	<delete id="moneybookDelete" parameterType="int">
+		delete from
+	    	moneybook_tb
+		where
+			moneybook_no = #{moneybook_no}
+	</delete>
+	
+	<select id="moneybookResult1" parameterType="hashmap" resultType="int">
+		select
+			sum(moneybook_amount) as moneybook_amount
+		from
+			moneybook_tb
+		where
+			moneybook_type = #{moneybook_type}
+		and
+			acc_id = #{acc_id}
+	</select>
+	
+	<select id="moneybookMin" parameterType="string" resultType="int">
+		select
+			min(moneybook_amount) as moneybook_amount
+		from
+			moneybook_tb
+		where
+			acc_id = #{acc_id}
+	</select>
+	
+	<select id="moneybookMax" parameterType="string" resultType="int">
+		select
+			max(moneybook_amount) as moneybook_amount
+		from
+			moneybook_tb
+		where
+			acc_id = #{acc_id}
+	</select>
+</mapper>
