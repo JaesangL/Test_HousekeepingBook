@@ -27,7 +27,7 @@
 </script>
 </head>
 <body>
-	<h1>[가계부 수정]</h1>
+	<h1>[家計簿修正]</h1>
 	
 	<form id="updateform" action="/moneybook/update" method="post">
 		<input type="hidden" value="${sessionScope.loginID }" name="acc_id">
@@ -43,12 +43,12 @@
 					<select name="moneybook_type">
 						<c:choose>
 							<c:when test="${moneybook.moneybook_type == '수입'}">
-								<option value="수입" selected="selected">수입</option>
-								<option value="지출">지출</option>													
+								<option value="수입" selected="selected">収入</option>
+								<option value="지출">支出</option>													
 							</c:when>
 							<c:otherwise>
-								<option value="수입">수입</option>
-								<option value="지출" selected="selected">지출</option>													
+								<option value="수입">収入</option>
+								<option value="지출" selected="selected">支出</option>													
 							</c:otherwise>
 						</c:choose>
 					</select>
@@ -59,7 +59,7 @@
 				<td><input type="number" name="moneybook_amount" id="moneybook_amount" value="${moneybook.moneybook_amount }"></td>
 			</tr>
 		</table>
-		<input type="button" value="수정하기" onclick="updateform();">
+		<input type="button" value="修正する" onclick="updateform();">
 	</form>
 </body>
 </html>
