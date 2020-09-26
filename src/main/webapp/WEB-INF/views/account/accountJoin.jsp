@@ -96,7 +96,7 @@
 
 
 					<input type="button" class="btn btn-primary form-control"
-						value="가입하기" onclick="joinForm();">
+						value="登録する" onclick="joinForm();">
 				</form>
 			</div>
 		</div>
